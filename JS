@@ -1,0 +1,82 @@
+let boxes = document.querySelectorAll(".box");
+let resetbtn = document.querySelector("#abc");
+
+let turnO = true;
+
+
+const winpattern = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+];
+
+const reset = () => {
+    turnO = true;
+    enableboxes();
+
+}
+
+
+boxes.forEach((box) => {
+    box.addEventListener("click", (e) => {
+        if(turnO){
+            box.innerText = "O";
+            box.style.color = "red";
+            turnO = false;
+        }
+        else{
+            box.innerText = "X";
+            box.style.color = "blue";
+            turnO = true;
+        }
+        box.disabled = true;
+        checkWin();
+    })
+})
+
+const disableboxes = () => {
+    boxes.forEach((box) => {
+        box.disabled = true;
+    })
+}
+ 
+const enableboxes = () => {
+    boxes.forEach((box) => {
+        box.disabled = false;
+        box.innerText = "";
+    })
+}
+ 
+const checkWin = () => {
+    winpattern.forEach((pattern) => {
+        let box1 = boxes[pattern[0]].innerText;
+        let box2 = boxes[pattern[1]].innerText;
+        let box3 = boxes[pattern[2]].innerText;
+
+        if(box1 == "" || box2 == "" || box3 == ""){
+            return;
+        }
+        if(box1 == box2 && box2 == box3){
+            alert("winner is " + box1);
+            disableboxes();
+            boxes[pattern[0]].style.backgroundColor = "green";
+            boxes[pattern[1]].style.backgroundColor = "green";
+            boxes[pattern[2]].style.backgroundColor = "green";
+        }
+    })
+}
+
+resetbtn.addEventListener("click", reset);
+resetbtn.addEventListener("click", () => {
+    reset();
+    boxes.forEach((box) => {
+        box.style.backgroundColor = "rgb(103, 182, 6)";
+    })
+})
+
+
