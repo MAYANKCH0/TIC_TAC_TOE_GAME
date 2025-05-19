@@ -1,0 +1,29 @@
+# 🎮 Tic Tac Toe Game
+
+A simple, interactive **Tic Tac Toe** game built with **HTML**, **CSS**, and **JavaScript**. Play against another person on the same computer!
+
+## 🛠️ Features
+- 2-player mode
+- Visual win detection 
+- Reset game button
+- Responsive and clean UI
+
+## 💻 Technologies Used
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+
+## 🧠 How It Works
+- Players take turns to mark X or O in the 3×3 grid.
+- The game checks for winning conditions after every move.
+- The game can be restarted at any time with the "Reset" button.
+
+
+Made with 💻 by [Your Name]
+
+GitHub: @MAYANKCH0
+LinkedIn: linkedin.com/in/mayank-chauhan-6714002b2
+
+screenshots:
+https://ibb.co/tpNm8C4r
+https://ibb.co/SXrD4ccj
